@@ -1,7 +1,7 @@
-# 🐍 My Python Cheat Sheet
+# Python Cheat Sheet
 
 > **How to use this:** Don't read it top to bottom. `Ctrl+F` the thing you're
-> trying to *do* ("filter", "unique", "group"). Organised by **what I want**,
+> trying to *do* ("filter", "unique", "group"). 
 
 ---
 
@@ -19,7 +19,27 @@ df.info()       # columns + types + nulls, all at once
 ```python
 df.describe()   # count, mean, min, max, etc.
 ```
+---
+## Transforming the data
 
+**updating data types**
+Pipeline
+```
+df['new_column'] = (
+      df['old_column']     #1. START: what you've got
+      .do_something()      #2. STEP: Transform it
+      .do_something_else() #3. STEP: transform the result of that
+      .final_converstion() #4. END: land it in the type you need 
+```
+
+Example
+```
+df_transactions_data['amount_x'] = ( 
+    df_transactions_data['amount']
+    .str.replace('$', '', regex=False)
+    .str.replace(',', '', regex=False)
+    .astype(float))
+```
 ---
 
 ## ✂️ Grabbing columns by name pattern
