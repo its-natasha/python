@@ -2,7 +2,6 @@
 
 > **How to use this:** Don't read it top to bottom. `Ctrl+F` the thing you're
 > trying to *do* ("filter", "unique", "group"). Organised by **what I want**,
-> not by function name — because I never remember the function name.
 
 ---
 
